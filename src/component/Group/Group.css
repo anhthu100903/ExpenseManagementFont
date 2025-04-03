@@ -1,0 +1,81 @@
+.group-container {
+  width: 100%;
+}
+
+.search-and-add-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Search Bar Styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 60%;
+  box-sizing: border-box;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  padding: 5px;
+  margin-left: 10px;
+  width: 100%;
+  color: #333;
+}
+
+.search-icon {
+  color: #0b0c0b;
+  font-size: 1.3rem;
+}
+
+/* Add Group Button Styling */
+.add-group-btn {
+  padding: 10px 20px;
+  background-color: #19107c;
+  color: white;
+  font-weight: bold;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-group-btn:hover {
+  background-color: #454ca0;
+}
+
+.add-group-btn:focus {
+  outline: none;
+}
+
+/* Group List Styling */
+.group-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .group-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .group-list {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}

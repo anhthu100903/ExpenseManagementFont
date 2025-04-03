@@ -1,0 +1,143 @@
+/* Group Card Styling */
+.group-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  .group-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .group-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+  
+  .group-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #4caf50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  }
+  
+  .group-card-header h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+  }
+  
+  .group-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .group-card-body div {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .group-card-body strong {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .group-card-footer {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .group-card-footer span {
+    color: #4caf50;
+  }
+  
+  .group-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .group-card-footer span {
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  
+  /* Status Icon Styling */
+  .group-card-footer svg {
+    font-size: 1.3rem;
+    color: #4caf50;
+  }
+  
+  .group-card-footer svg.inactive {
+    color: #ff5722;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .group-card {
+      max-width: 100%;
+      padding: 20px;
+    }
+  
+    .group-avatar {
+      font-size: 1.5rem;
+    }
+  
+    .group-card-header h4 {
+      font-size: 1.3rem;
+    }
+  
+    .group-card-body div {
+      font-size: 1rem;
+    }
+  
+    .group-card-footer {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .group-card {
+      padding: 15px;
+    }
+  
+    .group-avatar {
+      font-size: 1.4rem;
+    }
+  
+    .group-card-header h4 {
+      font-size: 1.2rem;
+    }
+  
+    .group-card-body div {
+      font-size: 0.95rem;
+    }
+  
+    .group-card-footer {
+      font-size: 0.95rem;
+    }
+  }
+  
