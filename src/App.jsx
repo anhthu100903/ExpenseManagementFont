@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import Header from './component/Header/Hearder';  // Đảm bảo đường dẫn đúng
+import Home from './component/Home/Home';
+import Income from './component/Income/Income';
+import Expenses from './component/Expenses/Expenses';
+import Group from './component/Group/Group';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Trạng thái để theo dõi mục được chọn
+  const [activeItem, setActiveItem] = useState("home");
+
+  // Hàm render nội dung tương ứng với mục đã chọn
+  const renderContent = () => {
+    switch (activeItem) {
+      case "home":
+        return <Home />;
+      case "income":
+        return <Income />;
+      case "expenses":
+        return <Expenses />;
+      case "group":
+        return <Group />;
+      default:
+        return <Home />;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="layout">
+      <Header setActiveItem={setActiveItem} activeItem={activeItem} /> {/* Truyền hàm setActiveItem cho Header */}
+      <div className="content">
+        {renderContent()} {/* Hiển thị nội dung tương ứng */}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

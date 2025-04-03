@@ -1,0 +1,120 @@
+/* Transaction List */
+.transaction-list {
+  min-width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); 
+  gap: 20px;
+  grid-auto-rows: 1fr;
+}
+
+/* Transaction Card */
+.transaction-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Ensure the elements are stacked vertically */
+  justify-content: space-between;
+  box-sizing: border-box;
+  min-width: 275px;
+}
+
+.transaction-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Header (Amount section) */
+.transaction-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.transaction-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4caf50; /* Green color for the amount */
+}
+
+/* Card Details */
+.transaction-card-details {
+  display: flex;
+  flex-direction: column;  /* Stack the details vertically */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.transaction-card-details div {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.transaction-card-details strong {
+  font-weight: bold;
+}
+
+/* Button Actions */
+.transaction-card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.transaction-card-actions button {
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.transaction-edit-btn {
+  margin-right: 10px;
+  background-color: #f4b35f;
+}
+
+.transaction-edit-btn:hover {
+  background-color: #f18417;
+  font-weight: bold;
+}
+
+.transaction-delete-btn {
+  background-color: #ff5222;
+}
+
+.transaction-delete-btn:hover {
+  background-color: #e61923;
+  font-weight: bold;
+}
+
+/* Responsive: Smaller screens */
+@media (max-width: 768px) {
+  .transaction-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .transaction-card {
+    padding: 15px;
+    min-width: 200px;
+  }
+
+  .transaction-card-details {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .transaction-list {
+    grid-template-columns: 1fr;  /* Single column on very small screens */
+  }
+
+  .transaction-card {
+    padding: 10px;
+  }
+}

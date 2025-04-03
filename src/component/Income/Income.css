@@ -1,0 +1,184 @@
+.filter {
+  display: flex;
+  justify-content: space-between; /* Các phần tử chia đều không gian giữa */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  margin-bottom: 20px;
+  flex-wrap: wrap;  /* Cho phép các phần tử chuyển xuống dòng khi không đủ không gian */
+  gap: 20px;        /* Khoảng cách giữa các phần tử */
+}
+
+/* Các phần tử select */
+.filter-selects {
+  display: flex;
+  gap: 10px;               /* Khoảng cách giữa các select */
+  flex-wrap: wrap;         /* Các select chuyển dòng khi không đủ không gian */
+  justify-content: flex-start; /* Căn trái */
+  flex-grow: 1;             /* Đảm bảo các phần tử select chiếm không gian còn lại */
+}
+
+.filter select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  min-width: 150px;        /* Đảm bảo select có chiều rộng tối thiểu */
+  flex-grow: 1;            /* Đảm bảo select chiếm không gian còn lại */
+}
+
+/* Các nút lọc và thêm */
+.filter-buttons {
+  display: flex;
+  gap: 20px;               /* Khoảng cách giữa các nút */
+  justify-content: flex-end; /* Các nút căn phải */
+  flex-wrap: wrap;         /* Các nút sẽ xuống dòng khi không đủ không gian */
+}
+
+.filter-btn,
+.reset-filter-btn,
+.add-income-btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  min-width: 120px;            /* Đảm bảo nút có chiều rộng tối thiểu */
+  text-align: center;
+}
+
+.filter-btn:hover,
+.reset-filter-btn:hover,
+.add-income-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive: Khi màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+  .filter {
+    flex-direction: column;  /* Các phần tử sẽ sắp xếp theo chiều dọc khi màn hình nhỏ */
+  }
+
+  .filter-selects {
+    flex-direction: column;  /* Các select nằm thành cột khi màn hình nhỏ */
+    gap: 10px;
+    width: 100%;              /* Các select chiếm toàn bộ chiều rộng */
+  }
+
+  .filter-buttons {
+    flex-direction: row;     /* Các nút nằm trong cùng một hàng */
+    width: 100%;              /* Các nút chiếm toàn bộ chiều rộng */
+    gap: 10px;
+  }
+
+  .filter-btn,
+  .reset-filter-btn,
+  .add-income-btn {
+    width: 30%;               /* Mỗi nút chiếm 48% chiều rộng */
+  }
+}
+
+/* Responsive: Khi màn hình rất nhỏ (ví dụ: điện thoại di động) */
+@media (max-width: 480px) {
+  .filter {
+    flex-direction: column;  /* Các phần tử sắp xếp thành cột khi màn hình rất nhỏ */
+  }
+
+  .filter-selects {
+    flex-direction: column;  /* Các select chiếm toàn bộ chiều rộng */
+    width: 100%;
+  }
+
+  .filter-buttons {
+    flex-direction: column;  /* Các nút chuyển thành cột khi màn hình rất nhỏ */
+    gap: 15px;
+    width: 100%;              /* Các nút chiếm toàn bộ chiều rộng */
+  }
+
+  .filter-btn,
+  .reset-filter-btn,
+  .add-income-btn {
+    width: 100%;              /* Các nút chiếm toàn bộ chiều rộng */
+  }
+}
+
+
+/* Thống kê tổng thu nhập */
+.total-income {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Button "Thêm" */
+.add-income-btn {
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-income-btn:hover {
+  background-color: #1976d2;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;  /* Căn giữa theo chiều ngang */
+  align-items: center;  /* Căn giữa theo chiều dọc */
+  z-index: 1100;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  padding: 60px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative; 
+  animation: scaleUp 0.3s ease;
+  overflow: hidden;
+}
+
+/* Close button */
+.close-modal-btn {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #ff5722;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 1100; /* Đảm bảo nút "X" nằm trên modal */
+}
+
+/* Hover effect */
+.close-modal-btn:hover {
+  color: #d32f2f;  /* Màu đỏ khi hover */
+  transform: rotate(180deg);  /* Xoay 180 độ khi hover */
+}
+
+/* Active effect (when clicked) */
+.close-modal-btn:active {
+  transform: scale(0.9);  /* Thu nhỏ khi nhấn */
+  color: #c2185b;  /* Màu đỏ khi nhấn */
+}
+
+/* Form Styling */
+.income-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

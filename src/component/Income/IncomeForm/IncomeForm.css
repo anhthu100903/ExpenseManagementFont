@@ -1,0 +1,144 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);  /* Màu nền mờ đậm hơn */
+    display: flex;
+    justify-content: center;  /* Căn giữa theo chiều ngang */
+    align-items: center;  /* Căn giữa theo chiều dọc */
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;  /* Để close button có thể được đặt ở vị trí tuyệt đối */
+    animation: scaleUp 0.3s ease;
+    overflow: hidden; /* Đảm bảo nội dung không bị tràn */
+  }
+  
+  /* Close button */
+  .close-modal-btn {
+    position: absolute;
+    top: 5px;  /* Thêm khoảng cách từ trên */
+    right: 15px;  /* Thêm khoảng cách từ phải */
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #ff5722;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.5s ease;
+    z-index: 1100; /* Đảm bảo nút "X" nằm trên modal */
+  }
+  
+  /* Hover effect */
+  .close-modal-btn:hover {
+    color: #d32f2f;  /* Màu đỏ khi hover */
+    transform: rotate(180deg);  /* Xoay 180 độ khi hover */
+  }
+  
+  /* Active effect (when clicked) */
+  .close-modal-btn:active {
+    transform: scale(0.9);  /* Thu nhỏ khi nhấn */
+    color: #c2185b;  /* Màu đỏ khi nhấn */
+  }
+  
+  /* Form Styling */
+  .income-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  /* Khoảng cách giữa mỗi label và input */
+    top: 20px
+  }
+
+  .income-form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: space-between;  /* Căn chỉnh label và input */
+    align-items: center;
+  }
+  
+  /* Styling cho mỗi input */
+  .income-form input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+    width: 70%;  /* Đặt chiều rộng cố định cho input */
+    margin-left: 10px;  /* Khoảng cách giữa label và input */
+  }
+  
+  /* Khi focus vào input */
+  .income-form input:focus {
+    border: 1px solid #4caf50;
+    outline: none;
+  }
+  
+  .income-form input:focus {
+    border: 1px solid #4caf50;
+    outline: none;
+  }
+  
+  /* Button Styling */
+  .income-form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .income-form button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);  /* Hiệu ứng phóng to khi hover */
+  }
+  
+  .income-form button:active {
+    background-color: #388e3c;
+  }
+  
+  /* Nút Đóng Modal */
+  .add-income-btn {
+    background-color: #2196f3;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .add-income-btn:hover {
+    background-color: #1976d2;
+  }
+  
+  .add-income-btn:active {
+    background-color: #1565c0;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes scaleUp {
+    0% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+  }
+  
