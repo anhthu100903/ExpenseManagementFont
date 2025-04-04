@@ -1,5 +1,6 @@
 // components/Header.js
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Header.css";;
 
@@ -10,10 +11,6 @@ function Header({ setActiveItem, activeItem }) {
   // Xử lý toggle menu
   const toggleMenu = () => {
     setIsMobile(!isMobile);
-  };
-
-  const handleItemClick = (item) => {
-    setActiveItem(item);
   };
 
   return (
@@ -27,31 +24,26 @@ function Header({ setActiveItem, activeItem }) {
         <ul className={isMobile ? "nav-links nav-active" : "nav-links"}>
           <li
             className={activeItem === "home" ? "active" : ""}
-            onClick={() => handleItemClick("home")}
           >
-            Trang chủ
+            <Link to="/home" >Trang Chủ</Link>
           </li>
           <li
             className={activeItem === "income" ? "active" : ""}
-            onClick={() => handleItemClick("income")}
           >
-            Thu Nhập
+            <Link to="/income">Thu Nhập</Link>
           </li>
           <li
             className={activeItem === "expenses" ? "active" : ""}
-            onClick={() => handleItemClick("expenses")}
           >
-            Chi tiêu
+            <Link to="/expenses">Chi Tiêu</Link>
           </li>
           <li
             className={activeItem === "group" ? "active" : ""}
-            onClick={() => handleItemClick("group")}
           >
-            Nhóm
+            <Link to="/group">Nhóm</Link>
           </li>
           <li
             // className={activeItem === "profile" ? "active" : ""}
-            // onClick={() => handleItemClick("profile")}
           >
             Hồ sơ
           </li>

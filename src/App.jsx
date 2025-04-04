@@ -1,39 +1,33 @@
-import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import './App.css';
 import Header from './component/Header/Hearder';  // Đảm bảo đường dẫn đúng
 import Home from './component/Home/Home';
 import Income from './component/Income/Income';
 import Expenses from './component/Expenses/Expenses';
 import Group from './component/Group/Group';
+import GroupDetail from './component/Group/GroupDetail/GroupDetail';
 
 
 function App() {
-  // Trạng thái để theo dõi mục được chọn
-  const [activeItem, setActiveItem] = useState("home");
-
-  // Hàm render nội dung tương ứng với mục đã chọn
-  const renderContent = () => {
-    switch (activeItem) {
-      case "home":
-        return <Home />;
-      case "income":
-        return <Income />;
-      case "expenses":
-        return <Expenses />;
-      case "group":
-        return <Group />;
-      default:
-        return <Home />;
-    }
-  };
-
   return (
-    <div className="layout">
-      <Header setActiveItem={setActiveItem} activeItem={activeItem} /> {/* Truyền hàm setActiveItem cho Header */}
-      <div className="content">
-        {renderContent()} {/* Hiển thị nội dung tương ứng */}
+    <Router>
+      <div className="layout">
+        <Header />
+        <div className="content">
+        <Routes>
+            {/* Các route điều hướng tới các trang khác */}
+            <Route path="/home" element={<Home />} />
+            <Route path="/income" element={<Income />} />
+            <Route path="/expenses" element={<Expenses />} />
+            <Route path="/group" element={<Group />} />
+            <Route path="/group/:id" element={<GroupDetail/>}/>
+            
+            {/* Mặc định, nếu không có route khớp, hiển thị Home */}
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

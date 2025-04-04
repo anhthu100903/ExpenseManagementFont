@@ -1,0 +1,74 @@
+.group-expenses-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    max-width: 350px;
+  }
+  
+  .group-expenses-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .expense-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4caf50; /* Green for positive amount */
+  }
+  
+  .expense-category {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .group-expenses-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .expense-description {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .expense-details {
+    display: flex;
+    gap: 15px;
+    font-size: 0.95rem;
+    color: #777;
+  }
+  
+  .expense-payer, .expense-date {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  
+  .group-expenses-card-footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .view-details-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #388e3c;
+  }
+  

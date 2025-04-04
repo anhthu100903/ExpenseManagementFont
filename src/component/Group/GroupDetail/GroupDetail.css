@@ -1,0 +1,56 @@
+.group-detail {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.group-detail-header {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.group-detail-header h1 {
+  margin: 0;
+}
+
+.group-detail-info {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.group-detail-filters {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.group-detail-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.add-expense-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.group-detail-stats {
+  margin-top: 20px;
+}
+
+.group-detail-expenses {
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.group-detail-expenses h4 {
+  margin-bottom: 15px;
+}

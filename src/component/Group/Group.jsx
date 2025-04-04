@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import GroupCard from "./GroupCard/GroupCard";
 import "./Group.css";
-import GroupDetail from "./GroupDetails/GroupDetail";
+import GroupDetail from "./GroupDetail/GroupDetail";
 import { FaSearch } from "react-icons/fa";
 
 function Group() {
@@ -245,7 +246,10 @@ function Group() {
 
       <div className="group-list">
         {filteredGroups.map((group) => (
-          <GroupCard key={group.id} group={group} onClick={handleGroupClick} />
+          // <GroupCard key={group.id} group={group} onClick={handleGroupClick} />
+          <Link to={`/group/${group.id}`} key={group.id} state={{ group }}>
+            <GroupCard group={group}  />
+          </Link>
         ))}
       </div>
 
